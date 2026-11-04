@@ -6,9 +6,7 @@ export class CartPage {
   private readonly macBookRow: Locator;
 
   constructor(private readonly page: Page) {
-    this.macBookRow = page
-      .locator('#content')
-      .getByRole('row')
+    this.macBookRow = page .locator('#content').getByRole('row')
       .filter({ has: page.getByRole('link', { name: 'MacBook', exact: true }) });
     this.macBookQuantity = this.macBookRow.getByRole('textbox');
     this.emptyCartMessage = page
